@@ -33,12 +33,6 @@ nice_plot <- function(x1){
     theme_light()
 }
 
-
-#Function to calculate B value
-##b_cal <- function(){( log( (c_val-1)*yt/(c_val-yt) ))/t}
-#Lets not recalculate B values- it doesn't make sense. B value is constant for stuff. 
-
-
 ui <- fluidPage(
   fluidRow(
     column(5, 
