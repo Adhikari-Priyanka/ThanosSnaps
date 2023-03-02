@@ -12,3 +12,4 @@ If I was an adviser to Thanos, I would've told him to maybe focus on reducing th
 I have used the logarithmic growth curve formula to calculate population:
 yt = c/(1+A*e^-B*t)
 Although I mathematically know what constant B means, I am yet to figure out how to explain its biological meaning. 
+
