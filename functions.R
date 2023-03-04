@@ -30,3 +30,4 @@ nice_plot <- function(x1){
     labs(x= "Time", y="Population count")+
     theme_light()
 }
+
