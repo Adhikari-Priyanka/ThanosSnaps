@@ -1,9 +1,9 @@
 #Function to generate vector with yt values
 yt_val <- function(c_val ,b_val){
-  t=1 #initialize time counter
-  a=c_val-1 #calculate a value
+  t<-1 #initialize time counter
+  a<-c_val-1 #calculate a value
   l <- c() #initial vector to contain yt values
-  yt=1
+  yt<-1
   while ( round(yt, 0) <c_val){ 
     yt <- c_val/ (1+ a* exp(-1*b_val*t)) #Calculates yt value at time = t
     l<- c(l, yt) #adding that to vector of all yt values

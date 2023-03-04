@@ -2,7 +2,7 @@ library(shiny)
 library(ggplot2)
 
 server <- function(input, output, session) {
-  
+  #plotting normal log groeth
   yt_ser <- reactive(yt_val(c_val = input$c, b_val = input$b))
   output$yt <- renderPrint(yt_ser())
   output$time <- renderText( length(yt_ser())) #Time taken to reach carrying capacity is length of vector containing yt values
@@ -20,8 +20,5 @@ server <- function(input, output, session) {
   
   #Did it make a difference?
   output$diff <- renderText(length(new_yt_ser()) - length(yt_ser()))
-  
-  observeEvent(input$c, "c is working")
-  observeEvent(yt_ser(),"yt series works")
   
 }
