@@ -10,6 +10,16 @@ ui1 <- dashboardPage(
 )
 
 ui_sidebar <- dashboardSidebar(
+  
+  #CSS style sidebar properties
+  tags$style(" {positive: fixed;
+             top: 330px; 
+             left:330px;
+             margin-top: 40px;
+             border: 3px solid red}"),
+  
+  "wor22",
+  
   numericInput("c", 
              label = "Enter C carrying capacity value", 
              min= 95, max= 1000, value = 500, step =10),
@@ -23,13 +33,16 @@ ui_sidebar <- dashboardSidebar(
   h3("What if Thanos snaps at time = "), 
   numericInput("ts", 
              label="Time when Thanos snap happens", 
-             min= 3, max= 100, value = 12),
+             min= 3, max= 1000, value = 12),
   actionButton("new_go", "Plot this!"),
   actionButton("new_clear", "Reset"),
    
   h3("So how much change did Thanos bring?"),
   "Thanos delayed the inevitable reaching carrying capacity by time: ",
-  textOutput("diff")
+  textOutput("diff"),
+  
+  #sidebar properties
+  collapsed = FALSE
 )
 
 ui_body <- dashboardBody(
@@ -78,6 +91,10 @@ server1 <- function(input, output, session){
     updateNumericInput(session, "b", value= 0.66)
     updateNumericInput(session, "ts", value= 12)
 
+  })
+  
+  observeEvent(input$new_clear, {
+    updateNumericInput(session, "ts", value = 12)
   })
   
 }
